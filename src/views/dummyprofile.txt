@@ -1,0 +1,61 @@
+<template>
+<v-app>
+
+      <v-container>
+        <v-row dense>
+         
+  
+          <v-col
+            v-for="(item, i) in items"
+            :key="i"
+            cols="12"
+          >
+            <v-card
+              :color="item.color"
+              dark
+            >
+
+
+             <v-avatar
+                  class="ma-2"
+                  
+                  size="300"
+                  tile
+                >
+                  <v-img :src="item.src"></v-img>
+                </v-avatar>
+
+                  <v-card-title
+                    class="headline"
+                    v-text="item.title"
+                  ></v-card-title>
+  
+                  <v-card-subtitle v-text="item.artist"></v-card-subtitle>
+        
+  
+               
+
+        
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    
+</v-app>
+</template>
+
+<script>
+  export default {
+    data: () => ({
+      items: [
+       
+        {
+          color: '#952175',
+          src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+          title: 'Halcyon Daysdddddddddddddddddddddddddddddddddddddddddddddddddddddd    ',
+          artist: 'Ellie Goulding',
+        },
+      ],
+    }),
+  }
+</script>
