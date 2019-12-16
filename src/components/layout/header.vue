@@ -38,6 +38,9 @@
 </template>
 
 <script>
+  import {APIService} from '../../services/apiservice';
+  const apiService = new APIService();
+
   export default {
     data: () => ({
       extended: true,
@@ -49,6 +52,19 @@
       bg: false,
       extensionHeight: 40,
     }),
+    
+    methods:{
+   
+      getProfile(){
+        apiService.getProfile().then((result)=>{
+        this.profile=result;
+        })
+      }
+    },
+    mounted:function()
+    {
+      this.getProfile();
+    }
   }
 </script>
 <style scoped>
