@@ -55,7 +55,7 @@
          <v-card-title>Open github and merge with the project
      </v-card-title>
          </v-card>
-      <v-btn color="primary" @click="e6 = 1">Continue</v-btn>
+      <v-btn color="primary" @click="e6 = 1">Revise</v-btn>
       </v-stepper-content>
 
 

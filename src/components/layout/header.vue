@@ -9,7 +9,7 @@
       :flat="flat"
       :extension-height="extensionHeight"
     >
-      <v-toolbar-title class="white--text  display-2">  PullRequesthere   </v-toolbar-title>
+      <v-toolbar-title class="white--text  display-2">  HackStakes   </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -19,7 +19,12 @@
         <v-btn text><router-link to="/profile" class="white--text" >profile</router-link></v-btn>
          <v-btn text><router-link to="/faq" class="white--text">faq</router-link></v-btn>
           <v-btn text><router-link to="/list" class="white--text">Listof PR</router-link></v-btn>
-        <v-btn text>   <router-link to="/tutorial" class="white--text">Tutorial</router-link></v-btn>
+           <v-btn text><router-link to="/PRrequest" class="white--text">PR Request</router-link></v-btn>
+            <v-btn text><router-link to="/leaderboard" class="white--text">Leader Board</router-link></v-btn>
+            <v-btn text><router-link to="/#" class="white--text">Login</router-link></v-btn>
+        
+        
+       <v-btn text>   <router-link to="/tutorial" class="white--text">Tutorial</router-link></v-btn>
       </v-toolbar-items>
 
     <template>
@@ -33,6 +38,9 @@
 </template>
 
 <script>
+  import {APIService} from '../../services/apiservice';
+  const apiService = new APIService();
+
   export default {
     data: () => ({
       extended: true,
@@ -44,6 +52,19 @@
       bg: false,
       extensionHeight: 40,
     }),
+    
+    methods:{
+   
+      getProfile(){
+        apiService.getProfile().then((result)=>{
+        this.profile=result;
+        })
+      }
+    },
+    mounted:function()
+    {
+      this.getProfile();
+    }
   }
 </script>
 <style scoped>

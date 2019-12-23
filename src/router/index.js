@@ -44,7 +44,23 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    }
+    },
+
+    {
+      path: '/leaderboard',
+      name: 'leaderboard',
+      component: () => import(/* webpackChunkName: "leaderboard" */ '../views/LeaderBoard.vue'),
+      },
+
+      {
+        path: '/PRrequest',
+        name: 'PRrequest',
+        component: () => import(/* webpackChunkName: "PRrequest" */ '../views/PRrequest.vue'),
+        },
+
+        
+   
+      
 ]
 
 const router = new VueRouter({
