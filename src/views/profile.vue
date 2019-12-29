@@ -213,6 +213,8 @@
 </template>
 
 <script>
+import {APIService} from '../service/apiservice';
+const apiService=new APIService();
   export default {
     data: () => ({
 
@@ -255,6 +257,21 @@
   ]
 
     }),
+    methods:
+    {
+      getProfile:function()
+      {
+        apiService.getProfile().then((result)=>{
+          console.log(result);
+          this.prof=result
+          console.log(this.prof,"this is prof")
+        })
+      }
+    },
+    created:function()
+    {
+      this.getProfile()
+    }
 
 
   }

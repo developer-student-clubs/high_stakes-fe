@@ -1,15 +1,15 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:3000';
+const api_url="http://localhost:3000";
+export class  APIService
+{
+    constructor()
+    {
 
-export class APIService {
-
-    constructor() {
     }
-    getProfile() {
-        const url = `${API_URL}/auth/github/`;
-        var x =axios.get(url).then(response => response.data)
-        
-        console.log(x);
-        return x;
+    getProfile()
+    {
+        const url=`${api_url}/profile/`;
+        return axios.get(url).then(response=>response.data);
+
     }
 }
